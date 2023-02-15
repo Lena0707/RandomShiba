@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Где спим?</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #FFF;
+      }
+      .container {
+        padding: 10px;
+        text-align: center;
+      }
+      .btn {
+        background-color: #55CF8E;
+        color: #FFF;
+        font-size: 24px;
+        font-weight: 600;
+        padding: 10px 20px;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #CCC;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn:hover {
+        background-color: #CF9C40;
+      }
+      .shiba {
+        width: 150px;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Где спим?</h1>
+      <p>Пусть решит шиба...</p>
+      <img class="shiba" src="https://freepngimg.com/thumb/meme/97580-meme-photos-doge-hd-image-free.png" alt="A cute shiba" /><br>
+      <button class="btn" id="btn">хмм...</button>
+      <p>Клик #<span id="clicks">0</span></p>
+      <p style="font-size: 32px"><b>Спим у <span id="result">?</span></b></p>
+    </div>
+    <script>
+      const btn = document.getElementById('btn');
+      const clicks = document.getElementById('clicks');
+      const result = document.getElementById('result');
+      let count = 0;
+      btn.addEventListener('click', (e) => {
+        count++;
+        clicks.innerText = count;
+        const random = Math.floor(Math.random() * 2);
+        if (random === 0) {
+          result.innerText = 'Лены!';
+        } else {
+          result.innerText = 'Серёжи!';
+        }
+      });
+    </script>
+  </body>
+</html>
